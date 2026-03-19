@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>João Paulo | Desenvolvedor Full Stack</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+
+  <main class="min-h-screen flex items-center justify-center px-6">
+    <section class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+  
+      <div class="flex justify-center md:justify-end">
+        <div class="photo-wrapper">
+          <img
+            src="./imagens/foto.jpeg"
+            alt="João Paulo"
+            class="photo"
+          />
+        </div>
+      </div>
+
+      
+      <div class="space-y-6 text-center md:text-left">
+
+        <h1 class="title">
+          Olá, eu sou <span class="highlight">João Paulo</span> 👋
+        </h1>
+
+        <h2 class="subtitle">
+          Desenvolvedor Full Stack com foco em Frontend
+        </h2>
+
+        <p class="text-base">
+          Sou desenvolvedor web com foco em Frontend, apaixonado por transformar
+          ideias em soluções digitais claras, intuitivas e eficientes.
+        </p>
+
+        <p class="text-base">
+          Atualmente curso Engenharia de Software e atuo como estagiario em desenvolvimento web, o que
+          me permite unir desenvolvimento, suporte e visão prática de negócio.
+          Trabalho com tecnologias modernas para criar sites, sistemas e landing
+          pages que realmente ajudam pessoas e empresas no dia a dia.
+        </p>
+
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div>💻 Desenvolvimento de sites e landing pages</div>
+          <div>🎨 Interfaces modernas e responsivas</div>
+          <div>⚙️ Sistemas web personalizados</div>
+          <div>🔧 Manutenção e melhorias em projetos</div>
+        </div>
+
+        
+        <p class="italic text-gray-400">
+          Não entrego apenas código. Busco entender o problema, propor soluções
+          simples e criar experiências digitais que funcionam de verdade.
+        </p>
+
+       
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+         <button class="btn-outline" onclick="abrirWhatsApp()">
+          Falar Comigo
+          </button>
+
+          <a href="https://github.com/joaopaulo1101" class="btn-outline" target="_blank">
+            Ver projetos
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+<script>
+  function abrirWhatsApp() {
+    const numero = "5532998372544";
+    const mensagem = "Olá, vim pelo seu portfólio e gostaria de conversar sobre um projeto.";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+  }
+</script>
+</html>
