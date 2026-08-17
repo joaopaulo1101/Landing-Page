@@ -3,95 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfólio de João Paulo, Desenvolvedor Full Stack com foco em Frontend."
+  />
   <title>João Paulo | Desenvolvedor Full Stack</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet"
-  >
+  />
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="bg-gray-950 text-gray-100">
+<body class="bg-gray-950 text-gray-100 antialiased">
+  <div class="background-glow glow-top" aria-hidden="true"></div>
+  <div class="background-glow glow-bottom" aria-hidden="true"></div>
 
-  <main class="min-h-screen flex items-center justify-center px-6">
-    <section class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-  
-      <div class="flex justify-center md:justify-end">
+  <main class="relative z-10 min-h-screen px-6 py-16 lg:py-24">
+    <section
+      class="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20"
+    >
+      <div class="reveal photo-reveal order-1 flex justify-center lg:order-2 lg:justify-end">
         <div class="photo-wrapper">
           <img
             src="./imagens/foto.jpeg"
-            alt="João Paulo"
+            alt="João Paulo, Desenvolvedor Full Stack"
             class="photo"
           />
         </div>
       </div>
 
-      
-      <div class="space-y-6 text-center md:text-left">
+      <div class="order-2 text-center lg:order-1 lg:text-left">
+        <p class="eyebrow reveal" style="--delay: 100ms;">
+          Disponível para novos projetos
+        </p>
 
-        <h1 class="title">
-          Olá, eu sou <span class="highlight">João Paulo</span> 👋
+        <h1 class="title reveal mt-5" style="--delay: 180ms;">
+          Transformo ideias em
+          <span class="highlight">experiências digitais</span>.
         </h1>
 
-        <h2 class="subtitle">
-          Desenvolvedor Full Stack com foco em Frontend
-        </h2>
-
-        <p class="text-base">
-          Sou desenvolvedor web com foco em Frontend, apaixonado por transformar
-          ideias em soluções digitais claras, intuitivas e eficientes.
+        <p class="subtitle reveal mt-5" style="--delay: 260ms;">
+          Olá, eu sou João Paulo — Desenvolvedor Full Stack com foco em Frontend.
         </p>
 
-        <p class="text-base">
-          Atualmente curso Engenharia de Software e atuo como estagiario em desenvolvimento web, o que
-          me permite unir desenvolvimento, suporte e visão prática de negócio.
-          Trabalho com tecnologias modernas para criar sites, sistemas e landing
-          pages que realmente ajudam pessoas e empresas no dia a dia.
-        </p>
+        <div
+          class="reveal mt-7 space-y-4 text-base leading-8 text-gray-300"
+          style="--delay: 340ms;"
+        >
+          <p>
+            Desenvolvo produtos web claros, intuitivos e eficientes, combinando
+            tecnologia, design e atenção aos detalhes para gerar resultados reais.
+          </p>
 
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-          <div>💻 Desenvolvimento de sites e landing pages</div>
-          <div>🎨 Interfaces modernas e responsivas</div>
-          <div>⚙️ Sistemas web personalizados</div>
-          <div>🔧 Manutenção e melhorias em projetos</div>
+          <p>
+            Curso Engenharia de Software e atuo em desenvolvimento web. Crio
+            sites, sistemas e landing pages que tornam o dia a dia de pessoas e
+            empresas mais simples.
+          </p>
         </div>
 
-        
-        <p class="italic text-gray-400">
-          Não entrego apenas código. Busco entender o problema, propor soluções
-          simples e criar experiências digitais que funcionam de verdade.
+        <div class="mt-9 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <article class="service-card reveal" style="--delay: 420ms;">
+            <span class="service-icon" aria-hidden="true">⌘</span>
+            <h2>Sites & landing pages</h2>
+            <p>Presença digital rápida, estratégica e feita para converter.</p>
+          </article>
+
+          <article class="service-card reveal" style="--delay: 500ms;">
+            <span class="service-icon" aria-hidden="true">✦</span>
+            <h2>Interfaces modernas</h2>
+            <p>Experiências responsivas, acessíveis e agradáveis de usar.</p>
+          </article>
+
+          <article class="service-card reveal" style="--delay: 580ms;">
+            <span class="service-icon" aria-hidden="true">⚙</span>
+            <h2>Sistemas web</h2>
+            <p>Soluções personalizadas para transformar processos em fluidez.</p>
+          </article>
+
+          <article class="service-card reveal" style="--delay: 660ms;">
+            <span class="service-icon" aria-hidden="true">↗</span>
+            <h2>Evolução contínua</h2>
+            <p>Manutenção e melhorias para manter seu projeto sempre atual.</p>
+          </article>
+        </div>
+
+        <p
+          class="reveal mt-8 border-l-2 border-indigo-400/70 pl-4 text-left text-sm italic leading-7 text-gray-400 lg:text-base"
+          style="--delay: 740ms;"
+        >
+          Não entrego apenas código: entendo o problema e construo soluções
+          simples que funcionam de verdade.
         </p>
 
-       
-        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-         <button class="btn-outline" onclick="abrirWhatsApp()">
-          Falar Comigo
+        <div
+          class="reveal mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:flex lg:flex-wrap"
+          style="--delay: 820ms;"
+        >
+          <button type="button" class="btn-primary" onclick="abrirWhatsApp()">
+            Falar comigo <span aria-hidden="true">→</span>
           </button>
 
-          <a href="https://github.com/joaopaulo1101" class="btn-outline" target="_blank">
-            Ver projetos
+          <a
+            href="https://lpg-lumina.vercel.app/"
+            class="btn-lumina"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver Projeto Lumina <span aria-hidden="true">↗</span>
+          </a>
+
+          <a
+            href="https://github.com/joaopaulo1101"
+            class="btn-outline sm:col-span-2 lg:col-span-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver todos os projetos
           </a>
         </div>
-
       </div>
     </section>
   </main>
 
+  <script>
+    function abrirWhatsApp() {
+      const numero = "5532998372544";
+      const mensagem =
+        "Olá, vim pelo seu portfólio e gostaria de conversar sobre um projeto.";
+
+      window.open(
+        `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`,
+        "_blank"
+      );
+    }
+
+    document.documentElement.classList.add("js");
+
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (!motionQuery.matches) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.documentElement.classList.add("animations-ready");
+        });
+      });
+    } else {
+      document.documentElement.classList.add("animations-ready");
+    }
+  </script>
 </body>
-<script>
-  function abrirWhatsApp() {
-    const numero = "5532998372544";
-    const mensagem = "Olá, vim pelo seu portfólio e gostaria de conversar sobre um projeto.";
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-    window.open(url, "_blank");
-  }
-</script>
 </html>
