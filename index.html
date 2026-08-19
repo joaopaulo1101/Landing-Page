@@ -111,27 +111,59 @@
             Falar comigo <span aria-hidden="true">→</span>
           </button>
 
-          <a
-            href="https://lpg-lumina.vercel.app/"
-            class="btn-lumina"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            id="openProjectsModal"
+            type="button"
+            class="btn-projects sm:col-span-2 lg:col-span-1"
+            aria-haspopup="dialog"
+            aria-controls="projectsModal"
           >
-            Ver Projeto Lumina <span aria-hidden="true">↗</span>
-          </a>
-
-          <a
-            href="https://github.com/joaopaulo1101"
-            class="btn-outline sm:col-span-2 lg:col-span-1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver todos os projetos
-          </a>
+            <span aria-hidden="true">✦</span> Ver Projetos
+          </button>
         </div>
       </div>
     </section>
   </main>
+
+  <div
+    id="projectsModal"
+    class="project-modal fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="projectsModalTitle"
+    aria-hidden="true"
+  >
+    <div class="project-modal-backdrop absolute inset-0 bg-gray-950/80 backdrop-blur-md" aria-hidden="true"></div>
+
+    <section class="project-modal-panel relative z-10 w-full max-w-2xl overflow-hidden rounded-2xl border border-indigo-400/20 bg-gray-900 shadow-2xl shadow-indigo-950/60">
+      <div class="flex items-start justify-between border-b border-white/10 px-6 py-5 sm:px-8">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">Portfólio</p>
+          <h2 id="projectsModalTitle" class="mt-1 text-xl font-semibold text-white sm:text-2xl">Projetos em destaque</h2>
+        </div>
+
+        <button id="closeProjectsModal" type="button" class="modal-close-button" aria-label="Fechar projetos">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <div class="grid gap-4 p-6 sm:grid-cols-2 sm:p-8">
+        <a href="https://lpg-lumina.vercel.app/" class="project-card" target="_blank" rel="noopener noreferrer">
+          <span class="project-card-icon" aria-hidden="true">✦</span>
+          <p class="project-card-label">Projeto Lumina</p>
+          <p class="project-card-description">Sistema e landing page voltados para o setor de estética e negócios locais.</p>
+          <span class="project-card-link">Visualizar projeto <span aria-hidden="true">↗</span></span>
+        </a>
+
+        <a href="https://lp-daniela-marinho.netlify.app/" class="project-card" target="_blank" rel="noopener noreferrer">
+          <span class="project-card-icon" aria-hidden="true">⌘</span>
+          <p class="project-card-label">Psicóloga Daniela Marinho</p>
+          <p class="project-card-description">Modelo de landing page focada em conversão para profissionais da saúde e psicologia.</p>
+          <span class="project-card-link">Visualizar projeto <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+  </div>
 
   <script>
     function abrirWhatsApp() {
@@ -144,6 +176,53 @@
         "_blank"
       );
     }
+
+    const projectsModal = document.getElementById("projectsModal");
+    const openProjectsModalButton = document.getElementById("openProjectsModal");
+    const closeProjectsModalButton = document.getElementById("closeProjectsModal");
+    let lastFocusedElement;
+    let closeModalTimeout;
+
+    function openProjectsModal() {
+      window.clearTimeout(closeModalTimeout);
+      lastFocusedElement = document.activeElement;
+      projectsModal.classList.remove("hidden");
+      projectsModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+
+      requestAnimationFrame(() => {
+        projectsModal.classList.add("is-open");
+        closeProjectsModalButton.focus();
+      });
+    }
+
+    function closeProjectsModal() {
+      if (!projectsModal.classList.contains("is-open")) return;
+
+      projectsModal.classList.remove("is-open");
+      projectsModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+
+      closeModalTimeout = window.setTimeout(() => {
+        projectsModal.classList.add("hidden");
+        lastFocusedElement?.focus();
+      }, 260);
+    }
+
+    openProjectsModalButton.addEventListener("click", openProjectsModal);
+    closeProjectsModalButton.addEventListener("click", closeProjectsModal);
+
+    projectsModal.addEventListener("click", (event) => {
+      if (event.target === projectsModal || event.target.classList.contains("project-modal-backdrop")) {
+        closeProjectsModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && projectsModal.classList.contains("is-open")) {
+        closeProjectsModal();
+      }
+    });
 
     document.documentElement.classList.add("js");
 
